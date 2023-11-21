@@ -50,17 +50,39 @@ if (!isset($_SESSION['usuario'])){
                     <a class="nav-link" href="#" id="usuarios-link">Usuarios</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" id="productos-link">Productos</a>
+                    <a class="nav-link" href="#" id="listaprodu-link">Lista de Productos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" id="clientes-link">Clientes</a>
+                    <a class="nav-link" href="#" id="cargap-link">Cargar Productos</a>
                 </li>
+                <li class="nav-item dropdown">
+
+
+
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Productos
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="listaprodu/index.php">Lista de productos</a></li>
+
+            <li><a class="dropdown-item" href="cargap/index.php">Carga de productos</a></li>
+            
+            <li><hr class="dropdown-divider"></li>
+           
+          </ul>
+        </li>
+
+
+
                 <li class="nav-item">
-                    <a class="nav-link" href="#" id="ventas-link">Ventas</a>
+                    <a class="nav-link" href="#" id="proveedores-link">Proveedores</a>
                 </li>
             </ul>   
     </div>
 </nav>
+
+
+
 
 
 <div class="container mt-4" id="workspace">
@@ -115,20 +137,26 @@ if (!isset($_SESSION['usuario'])){
             });
         });
 
+        $("#listaprodu-link").click ( function () {
+            $.get("listaprodu/index.php", function (data) {
+                $("#workspace").html(data);
+            });
+        });
+
+        $("#cargap-link").click ( function () {
+            $.get("cargap/index.php", function (data) {
+                $("#workspace").html(data);
+            });
+        });
+
         $("#productos-link").click ( function () {
-            $.get("productos/", function (data) {
+            $.get("productos/index.php", function (data) {
                 $("#workspace").html(data);
             });
         });
 
-        $("#clientes-link").click ( function () {
-            $.get("clientes/", function (data) {
-                $("#workspace").html(data);
-            });
-        });
-
-        $("#ventas-link").click ( function () {
-            $.get("ventas/", function (data) {
+        $("#proveedores-link").click ( function () {
+            $.get("proveedores/", function (data) {
                 $("#workspace").html(data);
             });
         });
