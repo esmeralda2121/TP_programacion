@@ -14,6 +14,10 @@ body {
     background-attachment: fixed;
 }
 
+.f {
+  background-color: rgb(242, 227, 227); /* Cambia "blue" por el color que desees */
+}
+
 main {
     width: 100%;
     padding: 20px;
@@ -56,6 +60,10 @@ main {
     font-size: 26px;
 }
 
+.navbar {
+    background-color: #000000;
+}
+
 .caja__trasera div p {
     font-size: 16px;
     font-weight: 300;
@@ -72,6 +80,11 @@ main {
     outline: none;
     transition: all 300ms;
 }
+
+ .custom-navbar {
+            background-color: #421b46;
+        }
+
 /*color al tocar el boton */
 .caja__trasera button:hover {
     background: #421b46;
